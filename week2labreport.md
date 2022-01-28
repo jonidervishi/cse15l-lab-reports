@@ -3,9 +3,9 @@ Today, I am going to teach you how to remotely connect your computer all the way
 
 First, you need to go on over to this [link](https://code.visualstudio.com/) and download Microsoft Visual Studio Code.
 ![Image](downloadvisualstudiocode.PNG)
----
+<br />
 You may need to sign in or create an account in order to open the program.
----
+<br />
 Next, you're going to want to install [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) which will allow you to make connections to that computer I mentioned earlier at UCSD. The instructions are pretty straight forward and might already be installed on your computer.
 ![Image](installSSH.PNG)
 After you've got those two installed, it's time to get the address of which computer you will be connecting to. In order to do that, you need to visit the [account lookup](https://sdacs.ucsd.edu/~icc/index.php) page. Once you're there sign in and click on the button that says "***cs15l***" and then a bunch of characters. If you see a message saying that your ***password is not set***, click on that link in order to reset your password and have a password to sign in remotely to that server. Once you have done that wait 15 minutes and then try the following:
@@ -75,7 +75,7 @@ Now that we know what the scp command does, we should also know that everytime u
 ***
 *Side note to grader: Again, I ran into problems earlier and I think it may be server-side problems, when I tried to scp my key file to the server it told me connection timed out after 10 minutes plus of waiting.*
 ![Image](fail.PNG)
-***
+<br />
 Here are a few tips to use in the future:
 * You can write commands after the login command ssh in order to run commands immediately after logging in. 
 * Example: ssh cs15lwi22@ieng6.ucsd.edu "cd"
