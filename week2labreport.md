@@ -70,7 +70,7 @@ Now that we know what the scp command does, we should also know that everytime u
 * For choosing which file you want to say the key at, simply press enter and it will be at the location in the parentheses. However, copy the file location inside the parentheses as we will need it later.
 * Choose a passcode or simply hit enter if you don't want a passcode and re-enter it.
 * You should get a message that looks like this:\
-![Image](privatekey.png)
+![Image](privatekey.PNG)
 * After that, login into the ssh client again.
 * Next you will be doing the same step which is copying the file into the server again. Use the command ***mkdir ssh*** first.
 * Then use the command ***scp (file location you copied) (username)@ieng6.ucsd.edu:~/.ssh/authorized_keys***
