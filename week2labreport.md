@@ -3,8 +3,7 @@ Today, I am going to teach you how to remotely connect your computer all the way
 
 First, you need to go on over to this [link](https://code.visualstudio.com/) and download Microsoft Visual Studio Code.
 ![Image](downloadvisualstudiocode.PNG)
-<br />
-You may need to sign in or create an account in order to open the program.
+You may need to sign in or create an account in order to open the program.<br />
 <br />
 Next, you're going to want to install [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) which will allow you to make connections to that computer I mentioned earlier at UCSD. The instructions are pretty straight forward and might already be installed on your computer.
 ![Image](installSSH.PNG)
@@ -18,8 +17,10 @@ After you've got those two installed, it's time to get the address of which comp
 * You will then see a prompt for your password. Enter in the password you set earlier, if you didn't set a password either check again to see if you need to make one or enter in your password for your school account. Note: When typing in your password, ***the terminal will remain blank, as if nothing is being typed in.***. This is purely for security and you are still typing in even though you don't see it. Just type carefully and press enter once you have entered your password. Again, ***you should not see your password being typed in as you type it.***
 * After you hit enter, you should see some messages automatically pop up until you reach the bottom of the messages which should look like this:
 ![Image](successmessage.PNG)
+<br />
 If you see that, then congratulations! You have connected your computer to your individual server at UCSD! Now, lets see what exactly we can do now that we have our computers connected.
----
+<br />
+<br />
 First, let's try some random commands and we'll try and figure out what they mean.
 Try these: 
 * cd ~
@@ -37,7 +38,7 @@ Now, we will see how to send files from our computer onto the UCSD computer we h
 * In the top of left of Visual Studio Code, press ***File*** and then ***New File**
 * Click on "***Select a language***" then type in ***Java*** and select ***Java*** from the drop down menu. 
 * Then copy paste this code into your file and save it as ***WhereAmI.java***:
----
+<br />
 ```
 class WhereAmI {
   public static void main(String[] args) {
@@ -48,9 +49,9 @@ class WhereAmI {
   }
 }
 ```
----
 *Side note: I am skipping the "run it on java step" for simplicity sake*
----
+<br />
+<br />
 * Then in the terminal, type ***scp WhereAmI.java (your username)@ieng6.ucsd.edu:~/***
 * The terminal should prompt you for your password again, enter it.
 * You should see a success message. Once you get this, close the terminal and initiate the login process again using the ***ssh*** command from before.
@@ -58,9 +59,11 @@ class WhereAmI {
 * You can then run the program by typing ***javac WhereAmI.java*** and hitting enter and then typing ***java WhereAmI***.
 * You should see this:
 ![Image](scpsuccess.PNG)
-***
+<br />
+<br />
 *Side note for grader: SCP was giving me a permission denied error that I couldn't fix so I put this in as consolation*
-***
+<br />
+<br />
 Now that we know what the scp command does, we should also know that everytime use the command you have to re-enter your password. This can be extremely time consuming and tricky at times. However, there is a way to get around this called ssh-keygen which creates a public and private "key" on the server you are connected to and on your computer. These are used in place of your password so that you don't have to re-enter your password everytime you use an scp command.
 * First logout of the server using ***exit***.
 * In the terminal, type ssh-keygen and hit enter.
@@ -72,9 +75,11 @@ Now that we know what the scp command does, we should also know that everytime u
 * Next you will be doing the same step which is copying the file into the server again. Use the command ***mkdir ssh*** first.
 * Then use the command ***scp (file location you copied) (username)@ieng6.ucsd.edu:~/.ssh/authorized_keys***
 * After this, you can now use the scp command without having to re-enter your password everytime.
-***
+<br />
+<br />
 *Side note to grader: Again, I ran into problems earlier and I think it may be server-side problems, when I tried to scp my key file to the server it told me connection timed out after 10 minutes plus of waiting.*
 ![Image](fail.PNG)
+<br />
 <br />
 Here are a few tips to use in the future:
 * You can write commands after the login command ssh in order to run commands immediately after logging in. 
