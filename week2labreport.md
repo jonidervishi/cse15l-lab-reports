@@ -33,7 +33,6 @@ Try these:
 ![Image](commands.PNG)
 You can also stop the connection by typing ***exit*** in the terminal.
 ![Image](exit.PNG)
-***
 Now, we will see how to send files from our computer onto the UCSD computer we have made our connection to. To do this, we will make a file to send to our server. 
 * In the top of left of Visual Studio Code, press ***File*** and then ***New File**
 * Click on "***Select a language***" then type in ***Java*** and select ***Java*** from the drop down menu. 
@@ -48,9 +47,9 @@ Now, we will see how to send files from our computer onto the UCSD computer we h
   }
 }`
 ***
-***Side note: I am skipping the "run it on java step" for simplicity sake***
+*Side note: I am skipping the "run it on java step" for simplicity sake*
 ***
-* Then in the terminal, type ***scp WhereAmI.java (your username)@ieng6.ucsd.edu:~/
+* Then in the terminal, type ***scp WhereAmI.java (your username)@ieng6.ucsd.edu:~/***
 * The terminal should prompt you for your password again, enter it.
 * You should see a success message. Once you get this, close the terminal and initiate the login process again using the ***ssh*** command from before.
 * Once your logged back in, type in the code ***ls*** and you should see that the file "WhereAmI.java" is there. Congratulations, you've copied your first file!
@@ -58,7 +57,7 @@ Now, we will see how to send files from our computer onto the UCSD computer we h
 * You should see this:
 ![Image](scpsuccess.PNG)
 ***
-***Side note for grader: SCP was giving me a permission denied error that I couldn't fix so I put this in as consolation***
+*Side note for grader: SCP was giving me a permission denied error that I couldn't fix so I put this in as consolation*
 ***
 Now that we know what the scp command does, we should also know that everytime use the command you have to re-enter your password. This can be extremely time consuming and tricky at times. However, there is a way to get around this called ssh-keygen which creates a public and private "key" on the server you are connected to and on your computer. These are used in place of your password so that you don't have to re-enter your password everytime you use an scp command.
 * First logout of the server using ***exit***.
@@ -72,7 +71,7 @@ Now that we know what the scp command does, we should also know that everytime u
 * Then use the command ***scp (file location you copied) (username)@ieng6.ucsd.edu:~/.ssh/authorized_keys***
 * After this, you can now use the scp command without having to re-enter your password everytime.
 ***
-Side note to grader: Again, I ran into problems earlier and I think it may be server-side problems, when I tried to scp my key file to the server it told me connection timed out after 10 minutes plus of waiting.
+*Side note to grader: Again, I ran into problems earlier and I think it may be server-side problems, when I tried to scp my key file to the server it told me connection timed out after 10 minutes plus of waiting.*
 ![Image](fail.PNG)
 ***
 Here are a few tips to use in the future:
