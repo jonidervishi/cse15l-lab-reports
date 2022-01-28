@@ -5,7 +5,7 @@ First, you need to go on over to this [link](https://code.visualstudio.com/) and
 ![Image](downloadvisualstudiocode.PNG)
 
 You may need to sign in or create an account in order to open the program.
-***
+---
 Next, you're going to want to install [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) which will allow you to make connections to that computer I mentioned earlier at UCSD. The instructions are pretty straight forward and might already be installed on your computer.
 ![Image](installSSH.PNG)
 After you've got those two installed, it's time to get the address of which computer you will be connecting to. In order to do that, you need to visit the [account lookup](https://sdacs.ucsd.edu/~icc/index.php) page. Once you're there sign in and click on the button that says "***cs15l***" and then a bunch of characters. If you see a message saying that your ***password is not set***, click on that link in order to reset your password and have a password to sign in remotely to that server. Once you have done that wait 15 minutes and then try the following:
@@ -19,7 +19,7 @@ After you've got those two installed, it's time to get the address of which comp
 * After you hit enter, you should see some messages automatically pop up until you reach the bottom of the messages which should look like this:
 ![Image](successmessage.PNG)
 If you see that, then congratulations! You have connected your computer to your individual server at UCSD! Now, lets see what exactly we can do now that we have our computers connected.
-***
+---
 First, let's try some random commands and we'll try and figure out what they mean.
 Try these: 
 * cd ~
@@ -37,18 +37,20 @@ Now, we will see how to send files from our computer onto the UCSD computer we h
 * In the top of left of Visual Studio Code, press ***File*** and then ***New File**
 * Click on "***Select a language***" then type in ***Java*** and select ***Java*** from the drop down menu. 
 * Then copy paste this code into your file and save it as ***WhereAmI.java***:
-***
-`class WhereAmI {
+---
+```
+class WhereAmI {
   public static void main(String[] args) {
     System.out.println(System.getProperty("os.name"));
     System.out.println(System.getProperty("user.name"));
     System.out.println(System.getProperty("user.home"));
     System.out.println(System.getProperty("user.dir"));
   }
-}`
-***
+}
+```
+---
 *Side note: I am skipping the "run it on java step" for simplicity sake*
-***
+---
 * Then in the terminal, type ***scp WhereAmI.java (your username)@ieng6.ucsd.edu:~/***
 * The terminal should prompt you for your password again, enter it.
 * You should see a success message. Once you get this, close the terminal and initiate the login process again using the ***ssh*** command from before.
