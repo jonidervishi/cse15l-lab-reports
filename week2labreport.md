@@ -3,7 +3,7 @@ Today, I am going to teach you how to remotely connect your computer all the way
 
 First, you need to go on over to this [link](https://code.visualstudio.com/) and download Microsoft Visual Studio Code.
 ![Image](downloadvisualstudiocode.PNG)
-
+---
 You may need to sign in or create an account in order to open the program.
 ---
 Next, you're going to want to install [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) which will allow you to make connections to that computer I mentioned earlier at UCSD. The instructions are pretty straight forward and might already be installed on your computer.
