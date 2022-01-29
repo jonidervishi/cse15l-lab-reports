@@ -27,15 +27,17 @@ Try these:
 * cd
 * ls -lat
 * ls -a
-* ls /home/linux/ieng6/cs15lwi22/(your username), 
+* ls /home/linux/ieng6/cs15lwi22/(your username) 
 * cp /home/linux/ieng6/cs15lwi22/public/hello.txt ~/
 * cat /home/linux/ieng6/cs15lwi22/public/hello.txt
 * You should see these messages pop up:
 ![Image](commands.PNG)
 You can also stop the connection by typing ***exit*** in the terminal.
 ![Image](exit.PNG)
+<br />
+<br />
 Now, we will see how to send files from our computer onto the UCSD computer we have made our connection to. To do this, we will make a file to send to our server. 
-* In the top of left of Visual Studio Code, press ***File*** and then ***New File**
+* In the top of left of Visual Studio Code, press ***File*** and then ***New File***
 * Click on "***Select a language***" then type in ***Java*** and select ***Java*** from the drop down menu. 
 * Then copy paste this code into your file and save it as ***WhereAmI.java***:
 <br />
