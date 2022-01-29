@@ -1,10 +1,11 @@
 ##  Week 2 Lab Report
 Today, I am going to teach you how to remotely connect your computer all the way to your own individually assigned computer in the CSE basement at UCSD. 
-
+### Installing VS Code
 First, you need to go on over to this [link](https://code.visualstudio.com/) and download Microsoft Visual Studio Code.
 ![Image](downloadvisualstudiocode.PNG)
 You may need to sign in or create an account in order to open the program.<br />
 <br />
+### Remotely Connecting
 Next, you're going to want to install [OpenSSH](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse) which will allow you to make connections to that computer I mentioned earlier at UCSD. The instructions are pretty straight forward and might already be installed on your computer.
 ![Image](installSSH.PNG)
 After you've got those two installed, it's time to get the address of which computer you will be connecting to. In order to do that, you need to visit the [account lookup](https://sdacs.ucsd.edu/~icc/index.php) page. Once you're there sign in and click on the button that says "***cs15l***" and then a bunch of characters. If you see a message saying that your ***password is not set***, click on that link in order to reset your password and have a password to sign in remotely to that server. Once you have done that wait 15 minutes and then try the following:
@@ -21,6 +22,7 @@ After you've got those two installed, it's time to get the address of which comp
 If you see that, then congratulations! You have connected your computer to your individual server at UCSD! Now, lets see what exactly we can do now that we have our computers connected.
 <br />
 <br />
+### Trying Some Commands
 First, let's try some random commands and we'll try and figure out what they mean.
 Try these: 
 * cd ~
@@ -36,6 +38,7 @@ You can also stop the connection by typing ***exit*** in the terminal.
 ![Image](exit.PNG)
 <br />
 <br />
+### Moving Files with scp
 Now, we will see how to send files from our computer onto the UCSD computer we have made our connection to. To do this, we will make a file to send to our server. 
 * In the top of left of Visual Studio Code, press ***File*** and then ***New File***
 * Click on "***Select a language***" then type in ***Java*** and select ***Java*** from the drop down menu. 
@@ -66,6 +69,7 @@ class WhereAmI {
 *Side note for grader: SCP was giving me a permission denied error that I couldn't fix so I put this in as consolation*
 <br />
 <br />
+### Setting an SSH key
 Now that we know what the scp command does, we should also know that everytime use the command you have to re-enter your password. This can be extremely time consuming and tricky at times. However, there is a way to get around this called ssh-keygen which creates a public and private "key" on the server you are connected to and on your computer. These are used in place of your password so that you don't have to re-enter your password everytime you use an scp command.
 * First logout of the server using ***exit***.
 * In the terminal, type ssh-keygen and hit enter.
@@ -83,6 +87,7 @@ Now that we know what the scp command does, we should also know that everytime u
 ![Image](fail.PNG)
 <br />
 <br />
+### Optimizing Remote Running
 Here are a few tips to use in the future:
 * You can write commands after the login command ssh in order to run commands immediately after logging in. 
 * Example: ssh cs15lwi22@ieng6.ucsd.edu "cd"
