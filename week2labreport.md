@@ -94,4 +94,6 @@ Here are a few tips to use in the future:
 * You can also split up multiple commands on the same command line in the terminal in order to run multiple commands at once.
 * Example: cp minecraft.java; javac minecraft.java; java minecraft
 * And finally, you can use the up arrow to use your last command.
+<br />
+<br />
 Using these tips, you can create a .txt file with the commands necessary to access the remote server. I then simply copy and pasted each line and pasted into the terminal for a total of 8 keystrokes in order to copy a local file to the server. Doing it this way, I can make frequent edits to my files and be more efficient.
