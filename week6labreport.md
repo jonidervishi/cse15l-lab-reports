@@ -30,7 +30,7 @@ which streamlines the process of connecting to the ssh server.
 <br />
 ### Logging In Using New Alias
 Here is me logging in with my new alias:
-![Image](LoginW:Alias.PNG)
+![Image](LoginWAlias.PNG)
 I simply enter this into the terminal and I login:
 ```
 ssh Joni-UCSD
