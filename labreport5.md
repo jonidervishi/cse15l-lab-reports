@@ -6,10 +6,42 @@ As you can see from the command line, I created two results.txt files, one from 
 <br/>
 <br/>
 Let's go through two tests in which the results were different and determine which implementation produced the expected output or, if neither of them did.
-### Test 1: File #135
-For test file #135, my implementation of markdown parse was able to pick up a link as shown here:
-![Image](test135student.png)
-However, in the results file of the markdown parse provided to me, the results file did not show anything on line 135: 
-![Image](test135teacher.png)
+### Test 1: File #22
+For test file #22, my implementation of markdown parse was able to pick up a link as shown here:
+![Image](test269student.png)
+However, in the results file of the markdown parse provided to me, the results file did not show anything for file 22, as already made clear by the diff command: 
+![Image](test269teacher.png)
 So, my markdown parse picked up "[/bar\* "ti\*tle]" while the provided markdown parse picked up nothing. Let's see what test file #135 actually looks like, and determine which output was wrong, or if they're both wrong.
-Here is test file #135
+Here is test file #22:
+![Image](test22.png)
+As we can see, it follows the format of a markdown link:
+```
+[text](link)
+```
+Which means, that my implementation was correct and the given implementation was wrong. Let's look at the code and see what we can fix in order to make it correct.
+### What Went Wrong?
+Given MarkdownParse:
+![Image](errorInMarkdownParse.png)
+In the highlighted portion of the code, we can see that in a while loop, two variables are being initialized, nextOpenBracket, and nextCodeBlock. The while loop is meant to iterate through each index of the strings in the file, which causes a mistake when initializing these variables. The variable nextOpenBlock is trying to get the index of the next "[" after the currentIndex. However, if the currentIndex keeps moving upwards, in the case of file #22, it will never find another "[" since the only one is at the very beginning. This causes a problem later, as the if statement which returns "toReturn" if any of the indices are -1, is executed since that opening square bracket is not found, which means the indexOf method returns -1, and therefore the method returns an empty string almost immediately.
+<br/>
+<br/>
+### Test 2: File #494
+For test file #494, both implementations were able to pick up a link however, both are different. Here is what my implementation picked up:
+![Image](test494student.png)
+As you can see, the highlighted message shows that my implementation picked up "[\(foo\]" as a link.
+<br/>
+The given implementation picked up something different:
+![Image](test494teacher.png)
+Here the link picked up is "[\(foo\)]" where there is a closing parenthesis.
+<br/>
+Let's see what the test file looks like in order to determine which implementation was wrong.
+![Image](test494.png)
+As we can see, it follows the format of a markdown link:
+```
+[text](link)
+```
+However, the (link) part includes 2 parentheses inside, in which the link should be: "[\(foo\)]". Which means, that my implementation was wrong.
+### What Went Wrong?
+Given My MarkdownParse:
+![Image](myMarkdownParseError.png)
+The issue is with the closeParen index which finds the next closing parenthesis after the opening parenthesis. The error is, since the next ")" comes before the last ")" in the link, the program will think that the link ends earlier than it actually does. It will end the link at the first closing parenthesis instead of the last one, resulting in the one parenthesis missing. 
