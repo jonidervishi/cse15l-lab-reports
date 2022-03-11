@@ -11,6 +11,7 @@ For test file #22, my implementation of markdown parse was able to pick up a lin
 ![Image](test269student.png)
 <br/>
 However, in the results file of the markdown parse provided to me, the results file did not show anything for file 22, as already made clear by the diff command: 
+<br/>
 ![Image](test269teacher.png)
 <br/>
 So, my markdown parse picked up "[/bar\* "ti\*tle]" while the provided markdown parse picked up nothing. Let's see what test file #135 actually looks like, and determine which output was wrong, or if they're both wrong.
